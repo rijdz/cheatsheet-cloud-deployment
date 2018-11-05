@@ -1,13 +1,49 @@
 # Cheatsheet of Application Deployment on Public Cloud Services
-This repository contain Basic "Hello World" deployment application on Cloud Services.
+This repository contain Basic "Hello World" deployment Node application on Several Cloud Services.
 
+## Localhost
+```bash
+npm run start
+```
 
 ## AWS
 
 ## Azure
+[Source](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs)
+
+* Install Azure CLI
+[Azure-CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos?view=azure-cli-latest)
+
+* Create Services by Azure CLI
+```bash
+# Create Resource Group
+az group create --name rijdz-rg-azure --location "Southeast Asia"
+
+# Create Service Plan
+az appservice plan create --name rijdz-plan-azure --resource-group rijdz-rg-azure --sku FREE
+
+# Create Web App Service
+az webapp create --resource-group rijdz-rg-azure --plan rijdz-plan-azure --name rijdz-app-azure --deployment-local-git
+
+# Set Nodejs Runtime
+az webapp config appsettings set --resource-group rijdz-rg-azure --name rijdz-app-azure --settings WEBSITE_NODE_DEFAULT_VERSION=8.11.1
+
+# Add remote git into repository after succesfuly created
+git remote add azure https://rijdz@rijdz-app-azure.scm.azurewebsites.net/rijdz-app-azure.git
+
+# Push local repository into Remote Azure
+git push origin azure
+
+```
 
 ## Heroku
 [Source](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+[Demo](https://sleepy-harbor-42228.herokuapp.com/)
+
+* Login from Heroku-CLI
+```bash
+heroku login
+```
 
 * Initialize Heroku App Instance
 ```bash
