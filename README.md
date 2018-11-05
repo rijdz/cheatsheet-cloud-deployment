@@ -8,7 +8,10 @@ npm run start
 
 ## AWS
 
+
 ## Azure
+[Demo](https://rijdz-app-azure.azurewebsites.net/)
+
 [Source](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs)
 
 * Install Azure CLI
@@ -28,7 +31,10 @@ az webapp create --resource-group rijdz-rg-azure --plan rijdz-plan-azure --name 
 # Set Nodejs Runtime
 az webapp config appsettings set --resource-group rijdz-rg-azure --name rijdz-app-azure --settings WEBSITE_NODE_DEFAULT_VERSION=8.11.1
 
-# Add remote git into repository after succesfuly created
+# Get remote git from azure - (Copy the result)
+git config --get remote.azure.url
+
+# Add remote git (paste) into local repository after succesfuly created
 git remote add azure https://rijdz@rijdz-app-azure.scm.azurewebsites.net/rijdz-app-azure.git
 
 # Push local repository into Remote Azure
@@ -40,20 +46,18 @@ git push origin azure
 [Source](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 [Demo](https://sleepy-harbor-42228.herokuapp.com/)
 
-* Login from Heroku-CLI
 ```bash
+# Login from Heroku-CLI
 heroku login
-```
 
-* Initialize Heroku App Instance
-```bash
+# Initialize Heroku App Instance
 heroku create
+
+# Make sure Heroku Instance already added as remote git
+git remote -v
+
 ```
 
-* Make sure Heroku Instance already added as remote git
-```bash
-git remote -v
-```
 
 * Make sure node application have default starting script on package.json
 ```json
