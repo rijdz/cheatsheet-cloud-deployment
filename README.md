@@ -9,7 +9,7 @@ node -v
 
 * Clone this repository
 ```bash
-https://github.com/rijdz/cheatsheet-cloud-deployment.git
+git clone https://github.com/rijdz/cheatsheet-cloud-deployment.git
 ```
 
 
