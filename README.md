@@ -1,4 +1,4 @@
-# Cheatsheet of Application Deployment on Public Cloud Services
+# Application Deployment on Cloud Services
 This repository contain Basic "Hello World" deployment Node application on Several Cloud Services.
 
 ## Pre-requisite
