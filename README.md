@@ -1,6 +1,18 @@
 # Cheatsheet of Application Deployment on Public Cloud Services
 This repository contain Basic "Hello World" deployment Node application on Several Cloud Services.
 
+## Pre-requisite
+* Node Installed
+```bash
+node -v
+```
+
+* Clone this repository
+```bash
+https://github.com/rijdz/cheatsheet-cloud-deployment.git
+```
+
+
 ## Localhost
 ```bash
 npm run start
@@ -10,9 +22,7 @@ npm run start
 
 
 ## Azure
-[Demo](https://rijdz-app-azure.azurewebsites.net/)
-
-[Source](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs)
+[Source](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs) [Demo](https://rijdz-app-azure.azurewebsites.net/) 
 
 * Install Azure CLI
 [Azure-CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos?view=azure-cli-latest)
@@ -51,10 +61,15 @@ git push origin azure
 heroku login
 
 # Initialize Heroku App Instance
+# skip this if instance already created on heroku
 heroku create
 
 # Make sure Heroku Instance already added as remote git
 git remote -v
+
+# If there are no heroku as remote repository, you can add with
+# you can find Heroku Git Address on Heroku dashboard > settings
+git remote add heroku https://git.heroku.com/sleepy-harbor-42228.git
 
 ```
 
@@ -70,7 +85,3 @@ git remote -v
 ```bash
 git push heroku master
 ```
-
-* tldr
-
-![tldr](asset/heroku-node-tldr.png)
